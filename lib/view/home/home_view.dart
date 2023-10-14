@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:furniture_mobile_app/constants/borders.dart';
 import 'package:furniture_mobile_app/constants/paddings.dart';
 import 'package:furniture_mobile_app/widgets/custom_text_field.dart';
@@ -18,7 +19,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: AppPadding().pH20,
+            padding: AppPadding().pA20,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -28,8 +29,11 @@ class _HomeViewState extends ConsumerState<HomeView> {
                   icon: Icon(Icons.search_outlined),
                 ),
                 SizedBox(height: 25),
-                Placeholder(
-                  fallbackHeight: 200,
+                Image.network(
+                  "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/furniture-banner-template-design-a636dbc0cd8fcad1e4f5c65dc3746501_screen.jpg?ts=1609919679",
+                  height: 200,
+                  width: double.infinity,
+                  fit: BoxFit.fitWidth,
                 ),
                 SizedBox(height: 25),
                 Row(
@@ -51,38 +55,90 @@ class _HomeViewState extends ConsumerState<HomeView> {
                   children: [
                     Column(
                       children: [
-                        SizedBox(width: 80, height: 80, child: CircleAvatar()),
+                        SizedBox(
+                          width: 80,
+                          height: 80,
+                          child: Container(
+                            padding: AppPadding().pA10,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.amber,
+                            ),
+                            child: Image.network(
+                              "https://static.vecteezy.com/system/resources/previews/011/794/199/non_2x/fabric-armchair-soft-cushion-with-metal-leg-3d-rendering-modern-interior-design-for-living-room-free-png.png",
+                            ),
+                          ),
+                        ),
                         SizedBox(
                           height: 4,
                         ),
-                        Text("data"),
+                        Text("Sofa"),
                       ],
                     ),
                     Column(
                       children: [
-                        SizedBox(width: 80, height: 80, child: CircleAvatar()),
+                        SizedBox(
+                          width: 80,
+                          height: 80,
+                          child: Container(
+                            padding: AppPadding().pA10,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.amber,
+                            ),
+                            child: Image.network(
+                              "https://static.vecteezy.com/system/resources/previews/011/794/199/non_2x/fabric-armchair-soft-cushion-with-metal-leg-3d-rendering-modern-interior-design-for-living-room-free-png.png",
+                            ),
+                          ),
+                        ),
                         SizedBox(
                           height: 4,
                         ),
-                        Text("data"),
+                        Text("Sofa"),
                       ],
                     ),
                     Column(
                       children: [
-                        SizedBox(width: 80, height: 80, child: CircleAvatar()),
+                        SizedBox(
+                          width: 80,
+                          height: 80,
+                          child: Container(
+                            padding: AppPadding().pA10,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.amber,
+                            ),
+                            child: Image.network(
+                              "https://static.vecteezy.com/system/resources/previews/011/794/199/non_2x/fabric-armchair-soft-cushion-with-metal-leg-3d-rendering-modern-interior-design-for-living-room-free-png.png",
+                            ),
+                          ),
+                        ),
                         SizedBox(
                           height: 4,
                         ),
-                        Text("data"),
+                        Text("Sofa"),
                       ],
                     ),
                     Column(
                       children: [
-                        SizedBox(width: 80, height: 80, child: CircleAvatar()),
+                        SizedBox(
+                          width: 80,
+                          height: 80,
+                          child: Container(
+                            padding: AppPadding().pA10,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.amber,
+                            ),
+                            child: Image.network(
+                              "https://static.vecteezy.com/system/resources/previews/011/794/199/non_2x/fabric-armchair-soft-cushion-with-metal-leg-3d-rendering-modern-interior-design-for-living-room-free-png.png",
+                            ),
+                          ),
+                        ),
                         SizedBox(
                           height: 4,
                         ),
-                        Text("data"),
+                        Text("Sofa"),
                       ],
                     ),
                   ],

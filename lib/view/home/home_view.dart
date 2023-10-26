@@ -1,7 +1,9 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:furniture_mobile_app/constants/paddings.dart';
 import 'package:furniture_mobile_app/view/all_categories/all_categories_view.dart';
+import 'package:furniture_mobile_app/view/home/home_riverpod.dart';
 import 'package:furniture_mobile_app/widgets/category_card.dart';
 import 'package:furniture_mobile_app/widgets/custom_text_field.dart';
 import 'package:furniture_mobile_app/widgets/product_card.dart';
@@ -16,28 +18,53 @@ class HomeView extends ConsumerStatefulWidget {
 class _HomeViewState extends ConsumerState<HomeView> {
   @override
   Widget build(BuildContext context) {
+    var watch = ref.watch(homeRiverpod);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: AppPadding().pA20,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const CustomTextField(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: AppPadding().pA15,
+                child: const CustomTextField(
                   autofocus: true,
                   hintText: 'Search Furniture',
                   icon: Icon(Icons.search_outlined),
                 ),
-                const SizedBox(height: 25),
-                Image.network(
-                  "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/furniture-banner-template-design-a636dbc0cd8fcad1e4f5c65dc3746501_screen.jpg?ts=1609919679",
-                  height: 200,
-                  width: double.infinity,
-                  fit: BoxFit.fitWidth,
+              ),
+              const SizedBox(height: 10),
+
+              CarouselSlider(
+                options: CarouselOptions(
+                  height: 200.0,
+                  autoPlay: true,
+                  viewportFraction: 1,
                 ),
-                const SizedBox(height: 25),
-                Row(
+                items: watch.sliderImages.map((i) {
+                  return Builder(
+                    builder: (BuildContext context) {
+                      return Image.network(
+                        i,
+                        height: 200,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                      );
+                    },
+                  );
+                }).toList(),
+              ),
+
+              // Image.network(
+              //   "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/furniture-banner-template-design-a636dbc0cd8fcad1e4f5c65dc3746501_screen.jpg?ts=1609919679",
+              //   height: 200,
+              //   width: double.infinity,
+              //   fit: BoxFit.fitWidth,
+              // ),
+              const SizedBox(height: 25),
+              Padding(
+                padding: AppPadding().pH15,
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -57,10 +84,13 @@ class _HomeViewState extends ConsumerState<HomeView> {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
-                SizedBox(
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: AppPadding().pH15,
+                child: SizedBox(
                   height: MediaQuery.sizeOf(context).width / 3.5,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,13 +102,19 @@ class _HomeViewState extends ConsumerState<HomeView> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 20),
-                const Text(
+              ),
+              const SizedBox(height: 20),
+              Padding(
+                padding: AppPadding().pH15,
+                child: const Text(
                   "Newest",
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
                 ),
-                const SizedBox(height: 20),
-                GridView.builder(
+              ),
+              const SizedBox(height: 20),
+              Padding(
+                padding: AppPadding().pH10,
+                child: GridView.builder(
                   padding: EdgeInsets.zero,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
@@ -95,9 +131,9 @@ class _HomeViewState extends ConsumerState<HomeView> {
                     );
                   },
                 ),
-                const SizedBox(height: 40),
-              ],
-            ),
+              ),
+              const SizedBox(height: 40),
+            ],
           ),
         ),
       ),

@@ -20,6 +20,7 @@ class _AllCategoriesViewState extends ConsumerState<AllCategoriesView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Tüm Kategoriler"),
+        scrolledUnderElevation: 0,
       ),
       body: Padding(
         padding: AppPadding().pA20,

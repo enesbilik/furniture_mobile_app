@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:furniture_mobile_app/view/all_categories/all_categories_view.dart';
+import 'package:furniture_mobile_app/view/product_detail/product_detail_view.dart';
 import 'package:furniture_mobile_app/view/skeleton/skeleton_view.dart';
 
 void main() {

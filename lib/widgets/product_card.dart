@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_mobile_app/constants/borders.dart';
 import 'package:furniture_mobile_app/constants/paddings.dart';
+import 'package:furniture_mobile_app/view/product_detail/product_detail_view.dart';
 
 class ProductCard extends StatelessWidget {
   final String imageUrl;
@@ -21,15 +22,23 @@ class ProductCard extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-          Container(
-            padding: AppPadding().pA20,
-            decoration: BoxDecoration(
-              borderRadius: AppBorder().brA10,
-              color: Colors.grey[200],
-            ),
-            child: Padding(
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProductDetailView()),
+              );
+            },
+            child: Container(
               padding: AppPadding().pA20,
-              child: Image.network(imageUrl),
+              decoration: BoxDecoration(
+                borderRadius: AppBorder().brA10,
+                color: Colors.grey[200],
+              ),
+              child: Padding(
+                padding: AppPadding().pA20,
+                child: Image.network(imageUrl),
+              ),
             ),
           ),
           const SizedBox(height: 4),

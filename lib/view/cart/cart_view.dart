@@ -17,18 +17,24 @@ class _CartViewState extends ConsumerState<CartView> {
     var watch = ref.watch(cartRiverpod);
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "My Cart",
+          style: TextStyle(fontWeight: FontWeight.w600),
+        ),
+      ),
       body: SafeArea(
         child: Padding(
-          padding: AppPadding().pA15,
+          padding: AppPadding().pH15,
           child: Column(
             children: [
-              Text(
-                "My Cart",
-                style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700),
-              ),
-              SizedBox(
-                height: 15,
-              ),
+              // Text(
+              //   "My Cart",
+              //   style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700),
+              // ),
+              // SizedBox(
+              //   height: 15,
+              // ),
               Expanded(
                 // height: MediaQuery.sizeOf(context).height * 0.5,
                 child: ListView.builder(

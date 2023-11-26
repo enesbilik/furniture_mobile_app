@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:furniture_mobile_app/view/cart/cart_view.dart';
 import 'package:furniture_mobile_app/view/favorites/favorites_view.dart';
 import 'package:furniture_mobile_app/view/home/home_view.dart';
+import 'package:furniture_mobile_app/view/my_account/my_account_view.dart';
 
 class BaseScaffoldRiverpod extends ChangeNotifier {
   int currentIndex = 0;
@@ -21,7 +22,7 @@ class BaseScaffoldRiverpod extends ChangeNotifier {
         return const CartView();
 
       case 3:
-        return const Column();
+        return const MyAccountView();
 
       default:
         return const Column();

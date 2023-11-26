@@ -171,7 +171,7 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
-                          Icons.shopping_bag,
+                          Icons.shopping_basket_rounded,
                           color: Colors.white,
                         ),
                         SizedBox(

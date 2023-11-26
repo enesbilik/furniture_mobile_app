@@ -23,33 +23,40 @@ class _SkeletonViewState extends ConsumerState<SkeletonView> {
 
   Widget _bottomBar(BaseScaffoldRiverpod read, BaseScaffoldRiverpod watch) {
     return BottomNavigationBar(
+      iconSize: 24,
       type: BottomNavigationBarType.fixed,
       currentIndex: watch.currentIndex,
       onTap: (index) => read.setCurrentIndex(index),
-      unselectedIconTheme: const IconThemeData(color: Colors.grey),
-      selectedIconTheme: const IconThemeData(color: Colors.black),
+      selectedItemColor: Colors.black,
+      unselectedItemColor: Colors.grey,
+      selectedFontSize: 12,
+      unselectedFontSize: 12,
       elevation: 1,
       items: const [
         BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-            ),
-            label: ""),
+          icon: Icon(
+            Icons.home,
+          ),
+          label: "Anasayfam",
+        ),
         BottomNavigationBarItem(
-            icon: Icon(
-              Icons.favorite_outline_rounded,
-            ),
-            label: ""),
+          icon: Icon(
+            Icons.favorite_outline_rounded,
+          ),
+          label: "Listelerim",
+        ),
         BottomNavigationBarItem(
-            icon: Icon(
-              Icons.shopping_cart_outlined,
-            ),
-            label: ""),
+          icon: Icon(
+            Icons.shopping_basket_outlined,
+          ),
+          label: "Sepetim",
+        ),
         BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person_outline_outlined,
-            ),
-            label: ""),
+          icon: Icon(
+            Icons.person_outline_outlined,
+          ),
+          label: "Hesabım",
+        ),
       ],
     );
   }

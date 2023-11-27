@@ -6,8 +6,8 @@ import 'package:furniture_mobile_app/widgets/custom_dialog.dart';
 import 'package:furniture_mobile_app/widgets/custom_text_field2.dart';
 import 'package:furniture_mobile_app/widgets/top_image.dart';
 
-class ResetPasswordPage extends StatelessWidget with CustomValidation {
-  ResetPasswordPage({Key? key}) : super(key: key);
+class ResetPasswordView extends StatelessWidget with CustomValidation {
+  ResetPasswordView({Key? key}) : super(key: key);
 
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
@@ -17,7 +17,7 @@ class ResetPasswordPage extends StatelessWidget with CustomValidation {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.grey[100],
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         elevation: 0,
@@ -37,13 +37,13 @@ class ResetPasswordPage extends StatelessWidget with CustomValidation {
                 const TopLottie(
                     lottiePath: "assets/lotties/reset_password_lottie.json"),
                 const SizedBox(height: 10),
-                const BoldTitle(text: "Reset\nPassword"),
+                const BoldTitle(text: "Şifremi Yenile"),
                 const SizedBox(height: 10),
                 CustomTextField2(
                   controller: _passwordController,
                   obscureText: true,
-                  labelText: 'New Password',
-                  hintText: 'Enter your new password',
+                  labelText: 'Yeni Şifre',
+                  hintText: '******',
                   iconData: Icons.lock,
                   validator: validatePassword,
                   textInputAction: TextInputAction.next,
@@ -52,15 +52,18 @@ class ResetPasswordPage extends StatelessWidget with CustomValidation {
                 CustomTextField2(
                   controller: _confirmPasswordController,
                   obscureText: true,
-                  labelText: 'Confirm New Password',
-                  hintText: 'Confirm your new password',
+                  labelText: 'Yeni Şifre Tekrar',
+                  hintText: '******',
                   iconData: Icons.lock,
                   validator: (confirmValue) => validateConfirmPassword(
                       confirmValue, _passwordController.text),
                 ),
                 const SizedBox(height: 20),
-                CustomButton(
-                    text: "Submit", onPressed: () => _handleSubmit(context)),
+                Align(
+                  alignment: Alignment.center,
+                  child: CustomButton(
+                      text: "Onayla", onPressed: () => _handleSubmit(context)),
+                ),
                 const SizedBox(height: 10),
               ],
             ),

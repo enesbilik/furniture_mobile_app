@@ -164,8 +164,8 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                   height: 56,
                   width: 250,
                   child: ElevatedButton(
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: Colors.amber),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple),
                     onPressed: () {},
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,

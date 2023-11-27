@@ -2,17 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:furniture_mobile_app/view/cart/cart_riverpod.dart';
 
-class CartProductCard extends ConsumerWidget {
+class CartProductCard extends ConsumerStatefulWidget {
   final CartProductModel cartProductModel;
   final int index;
   const CartProductCard(this.cartProductModel, this.index, {super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<CartProductCard> createState() => _CartProductCardState();
+}
+
+class _CartProductCardState extends ConsumerState<CartProductCard> {
+  @override
+  Widget build(BuildContext context) {
     var watch = ref.watch(cartRiverpod);
+
     return Container(
-      margin: EdgeInsets.only(bottom: 10),
-      padding: EdgeInsets.all(8),
+      margin: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
           color: Colors.grey.shade100, borderRadius: BorderRadius.circular(10)),
       child: Row(
@@ -24,7 +30,7 @@ class CartProductCard extends ConsumerWidget {
               width: 100,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 4,
           ),
           Column(
@@ -32,53 +38,62 @@ class CartProductCard extends ConsumerWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                cartProductModel.title,
+                widget.cartProductModel.title,
                 style: TextStyle(
                   fontSize: 18,
                   color: Colors.grey.shade800,
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 2,
               ),
               Text(
-                cartProductModel.price,
-                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
+                widget.cartProductModel.price,
+                style:
+                    const TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
               ),
             ],
           ),
-          Spacer(),
+          const Spacer(),
           Container(
+            width: 120,
+            decoration: BoxDecoration(
+                color: Colors.black87, borderRadius: BorderRadius.circular(24)),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconButton(
-                    onPressed: () {
-                      watch.decrementProductAmount(index);
-                    },
-                    icon: Icon(
-                      Icons.remove,
-                      color: Colors.white,
-                    )),
+                  onPressed: () {
+                    watch.decrementProductAmount(widget.index);
+                  },
+                  icon: Icon(
+                    widget.cartProductModel.amount == 1
+                        ? Icons.delete_forever
+                        : Icons.remove,
+                    color: Colors.white,
+                    size: 24,
+                  ),
+                ),
                 Text(
-                  cartProductModel.amount.toString(),
-                  style: TextStyle(
+                  widget.cartProductModel.amount.toString(),
+                  style: const TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 16,
                       fontWeight: FontWeight.w600),
                 ),
                 IconButton(
-                    onPressed: () {
-                      watch.incrementProductAmount(index);
-                    },
-                    icon: Icon(
-                      Icons.add,
-                      color: Colors.white,
-                    )),
+                  onPressed: () {
+                    watch.incrementProductAmount(widget.index);
+                  },
+                  icon: const Icon(
+                    Icons.add,
+                    color: Colors.white,
+                    size: 24,
+                  ),
+                ),
               ],
             ),
-            decoration: BoxDecoration(
-                color: Colors.black, borderRadius: BorderRadius.circular(30)),
           )
         ],
       ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:furniture_mobile_app/view/address_infos/address_infos_view.dart';
 import 'package:furniture_mobile_app/view/auth/login/login_view.dart';
+import 'package:furniture_mobile_app/view/orders/orders_view.dart';
 
 class MyAccountView extends ConsumerWidget {
   const MyAccountView({super.key});
@@ -26,16 +28,26 @@ class MyAccountView extends ConsumerWidget {
             ),
             ListTile(
               leading: Icon(Icons.location_on),
-              title: Text("Adres Bilgilerim"),
+              title: Text("Adreslerim"),
               trailing: Icon(Icons.arrow_forward_ios_rounded),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => AddressInfosView()));
+              },
               contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 5),
             ),
             ListTile(
               leading: Icon(Icons.shopping_basket),
               title: Text("Siparişlerim"),
               trailing: Icon(Icons.arrow_forward_ios_rounded),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => OrdersView()),
+                );
+              },
               contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 5),
             ),
             ListTile(

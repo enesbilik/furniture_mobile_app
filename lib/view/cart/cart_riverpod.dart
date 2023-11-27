@@ -4,16 +4,24 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final cartRiverpod = ChangeNotifierProvider((_) => CartRiverpod());
 
 class CartRiverpod extends ChangeNotifier {
+  double totalPrice = 0;
+
+  void updateTotalPrice() {
+    totalPrice = 0;
+    for (var product in cartProducts) {
+      double productPrice =
+          double.parse(product.price.replaceAll('\$', '').replaceAll('.', ''));
+      totalPrice += productPrice * (product.amount);
+    }
+    totalPrice /= 100;
+    notifyListeners();
+  }
+
   var cartProducts = [
     CartProductModel(title: "Stylish Chair", price: "\$150.00"),
-    CartProductModel(title: "Coffee Table", price: "\$99.99"),
-    CartProductModel(title: "Desk Lamp", price: "\$29.95"),
-    CartProductModel(title: "Couch", price: "\$499.99"),
-    CartProductModel(title: "Bookshelf", price: "\$89.50"),
-    CartProductModel(title: "Dining Table", price: "\$299.00"),
+    CartProductModel(title: "Coffee Table", price: "\$99.99", amount: 4),
     CartProductModel(title: "Side Table", price: "\$49.99"),
-    CartProductModel(title: "Wall Art", price: "\$19.99"),
-    CartProductModel(title: "Rug", price: "\$69.00"),
+    CartProductModel(title: "Rug", price: "\$69.00", amount: 3),
     CartProductModel(title: "Throw Pillow", price: "\$9.99"),
   ];
 
@@ -22,6 +30,7 @@ class CartRiverpod extends ChangeNotifier {
       cartProducts[index].amount++;
       notifyListeners();
     }
+    updateTotalPrice();
   }
 
   void decrementProductAmount(int index) {
@@ -36,16 +45,14 @@ class CartRiverpod extends ChangeNotifier {
       }
       notifyListeners();
     }
+    updateTotalPrice();
   }
 }
 
 class CartProductModel {
   final String title;
   final String price;
-  int amount = 1;
+  int amount;
 
-  CartProductModel({
-    required this.title,
-    required this.price,
-  });
+  CartProductModel({required this.title, required this.price, this.amount = 1});
 }

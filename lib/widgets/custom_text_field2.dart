@@ -5,8 +5,8 @@ class CustomTextField2 extends StatelessWidget {
   final bool obscureText;
   final String labelText;
   final String hintText;
-  final IconData iconData;
-  final String? Function(String?) validator;
+  final IconData? iconData;
+  final String? Function(String?)? validator;
   final TextInputType? textInputType;
   final TextInputAction? textInputAction;
 
@@ -16,8 +16,8 @@ class CustomTextField2 extends StatelessWidget {
       this.obscureText = false,
       required this.labelText,
       required this.hintText,
-      required this.validator,
-      required this.iconData,
+      this.iconData,
+      this.validator,
       this.textInputType,
       this.textInputAction})
       : super(key: key);

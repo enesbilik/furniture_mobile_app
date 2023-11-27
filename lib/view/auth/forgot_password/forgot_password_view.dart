@@ -15,7 +15,7 @@ class ForgotPasswordView extends StatelessWidget with CustomValidation {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.grey[100],
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         elevation: 0,
@@ -70,7 +70,7 @@ class ForgotPasswordView extends StatelessWidget with CustomValidation {
   void _handleSubmit(BuildContext context) {
     if (_formKey.currentState!.validate()) {
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) => ResetPasswordPage()));
+          MaterialPageRoute(builder: (context) => ResetPasswordView()));
     }
   }
 }

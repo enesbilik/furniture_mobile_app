@@ -20,7 +20,7 @@ class RegisterView extends StatelessWidget with CustomValidation {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.grey[100],
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         elevation: 0,

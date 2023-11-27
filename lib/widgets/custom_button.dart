@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:furniture_mobile_app/constants/paddings.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -9,7 +8,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 50,
       width: 250,
       child: ElevatedButton(
@@ -17,7 +16,7 @@ class CustomButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 18,
             fontWeight: FontWeight.w700,

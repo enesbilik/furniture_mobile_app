@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		Ub8eYnxVl1y0f/4mSZqymjDQ314=
+		ICr2itC5vEK+8zXj/JqwxTWh70k=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		gjY+3C/D9sHK4aK7tJqy9s63jMg=
+		yDCRVxvgjk6x14ZFWnXJUFMUUJI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/lotties/sign_up_lottie.json</key>
 		<data>
-		b4Ss1j65hZbSCYS1/9AX3I/hFhE=
+		xNHBEkCsM/t9E2+w+3XUakulMDk=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/lotties/success_lottie.json</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		6OiZ2kYgQtC/h/TDUu58Gqwm+k0=
+		TNOZoBIAlJ600P8Ceqv+DxESSgA=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -285,7 +285,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8FjnEzqORTIUM32EGq35l6sknkac6K6qSatEaqdlWiU=
+			AtL6PrZFAl79f/GDl/w24v4Zu4etidicFgT1UDgZ0NU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -299,7 +299,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/6gfDRIHxivjyO5lySHtrxidB70DlHmUMguvfajECg0=
+			9veVZnP4xrnGAx+lpAtG69wAlmZNaEjK3ODaiTV2qFs=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
@@ -355,7 +355,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			C+y4Y1qVc1V+ZgHr0bZsH82oCS5P/EtlQc9r5+JpD3E=
+			P8bXbzeIdT/okoKhsq6RlffDWdfQuDCQY5fHa5d3A24=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/lotties/success_lottie.json</key>
@@ -383,7 +383,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			okKfng0Rq77ul5doxnzqkkuaNb95ksV3iONgG4GR/fg=
+			VUjUL3FgSH89VKx0zVh7OBxi14KuMlU6vRFYR1pat6w=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

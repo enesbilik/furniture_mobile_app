@@ -18,7 +18,7 @@ class _CartViewState extends ConsumerState<CartView> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "My Cart",
           style: TextStyle(fontWeight: FontWeight.w600),
         ),
@@ -46,7 +46,7 @@ class _CartViewState extends ConsumerState<CartView> {
                   },
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
@@ -57,23 +57,23 @@ class _CartViewState extends ConsumerState<CartView> {
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
                   ),
                   Text(
-                    "\$320.00",
+                    "\$${watch.totalPrice}",
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               SizedBox(
                 height: 56,
                 width: 200,
                 child: ElevatedButton(
-                  style:
-                      ElevatedButton.styleFrom(backgroundColor: Colors.black),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.deepPurple),
                   onPressed: () {},
-                  child: Text(
-                    "Buy now",
+                  child: const Text(
+                    "Tamamla",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
@@ -82,7 +82,7 @@ class _CartViewState extends ConsumerState<CartView> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
             ],

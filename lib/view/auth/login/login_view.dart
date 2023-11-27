@@ -118,7 +118,9 @@ class LoginView extends ConsumerWidget with CustomValidation {
   }
 
   void _loginsucceeded(BuildContext context) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const SkeletonView()));
+    Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => const SkeletonView()),
+        (route) => false);
   }
 }

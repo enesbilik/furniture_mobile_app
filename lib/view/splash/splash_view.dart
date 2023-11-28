@@ -39,7 +39,10 @@ class _SplashViewState extends ConsumerState<SplashView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Lottie.asset("assets/lotties/loading.json"),
+        child: Lottie.asset(
+          "assets/lotties/loading.json",
+          width: 250,
+        ),
       ),
     );
   }

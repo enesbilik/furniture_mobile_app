@@ -6,6 +6,7 @@ import 'package:furniture_mobile_app/view/all_categories/all_categories_riverpod
 import 'package:furniture_mobile_app/view/all_categories/all_categories_view.dart';
 import 'package:furniture_mobile_app/view/home/home_riverpod.dart';
 import 'package:furniture_mobile_app/widgets/category_card.dart';
+import 'package:furniture_mobile_app/widgets/custom_search_delegate.dart';
 import 'package:furniture_mobile_app/widgets/custom_text_field.dart';
 import 'package:furniture_mobile_app/widgets/product_card.dart';
 
@@ -45,11 +46,15 @@ class _HomeViewState extends ConsumerState<HomeView> {
                 padding: AppPadding().pA15,
                 child: CustomTextField(
                   autofocus: false,
-                  hintText: 'Search Furniture',
+                  hintText: 'Mobilya ara',
                   controller: controller1,
-                  icon: const Icon(
-                    Icons.search_outlined,
-                  ),
+                  icon: const Icon(Icons.search_outlined),
+                  onTap: () {
+                    showSearch(
+                      context: context,
+                      delegate: CustomSearchDelegate(),
+                    );
+                  },
                 ),
               ),
               const SizedBox(height: 10),

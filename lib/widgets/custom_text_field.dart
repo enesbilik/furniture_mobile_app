@@ -9,6 +9,7 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController? controller;
   final Function(String)? onChanged;
   final bool autofocus;
+  final void Function()? onTap;
 
   const CustomTextField({
     Key? key,
@@ -18,6 +19,7 @@ class CustomTextField extends StatelessWidget {
     this.controller,
     this.onChanged,
     this.autofocus = false,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -28,6 +30,8 @@ class CustomTextField extends StatelessWidget {
       child: ClipRRect(
         borderRadius: AppBorder().brA10,
         child: TextField(
+          readOnly: true,
+          onTap: onTap,
           autofocus: autofocus,
           onChanged: onChanged,
           controller: controller,

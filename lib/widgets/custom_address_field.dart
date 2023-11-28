@@ -19,7 +19,7 @@ class CustomAddressField extends StatelessWidget {
       this.textInputAction,
       this.controller,
       this.minLines,
-      this.maxLines,
+      this.maxLines = 1,
       this.maxLength})
       : super(key: key);
 

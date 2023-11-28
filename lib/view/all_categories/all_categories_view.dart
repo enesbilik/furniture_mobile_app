@@ -60,7 +60,7 @@ class _AllCategoriesViewState extends ConsumerState<AllCategoriesView> {
                 },
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(
               child: GridView.builder(
                 padding: EdgeInsets.zero,

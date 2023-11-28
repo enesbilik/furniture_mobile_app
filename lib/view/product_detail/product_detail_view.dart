@@ -19,7 +19,7 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
     var watch = ref.watch(productDetailRiverpod);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Detail"),
+        title: const Text("Detail"),
         actions: [
           IconButton(
             onPressed: () {
@@ -57,7 +57,7 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                     );
                   }).toList(),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Padding(
                   padding: AppPadding().pH15,
                   child: Column(
@@ -71,12 +71,12 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                               color: Colors.grey.shade800,
                             ),
                           ),
-                          Spacer(),
-                          Icon(
+                          const Spacer(),
+                          const Icon(
                             Icons.star_half_rounded,
                             color: Colors.amber,
                           ),
-                          Text("4.5")
+                          const Text("4.5")
                         ],
                       ),
                       Text(
@@ -86,7 +86,7 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                           color: Colors.grey.shade800,
                         ),
                       ),
-                      SizedBox(height: 25),
+                      const SizedBox(height: 25),
                       Text(
                         "Description",
                         style: TextStyle(
@@ -94,7 +94,7 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                           color: Colors.grey.shade800,
                         ),
                       ),
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
                       Text(
                         watch.isExpanded
                             ? watch.product.description
@@ -111,7 +111,7 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                           },
                           child: Text(
                             watch.isExpanded ? "Küçült" : "Daha Fazla",
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.black,
                                 decoration: TextDecoration.underline),
                           ),
@@ -123,7 +123,7 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(bottom: 10),
+            padding: const EdgeInsets.only(bottom: 10),
             width: double.infinity,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -133,7 +133,7 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                       .withOpacity(0.2), // Gölge rengi ve şeffaflığı
                   spreadRadius: 2, // Yayılma yarıçapı
                   blurRadius: 4, // Bulanıklık yarıçapı
-                  offset: Offset(0, -2), // Gölgenin konumu (x, y)
+                  offset: const Offset(0, -2), // Gölgenin konumu (x, y)
                 ),
               ],
             ),
@@ -151,7 +151,7 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                     ),
                     Text(
                       "\$${watch.product.price}",
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w700,
                         fontSize: 16,
@@ -167,7 +167,7 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.deepPurple),
                     onPressed: () {},
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:furniture_mobile_app/view/auth/login/login_view.dart';
-import 'package:furniture_mobile_app/view/skeleton/skeleton_view.dart';
+import 'view/splash/splash_view.dart';
+import 'package:get_storage/get_storage.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const SkeletonView(),
-      home: LoginView(),
+      home: const SplashView(),
     );
   }
 }

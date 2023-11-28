@@ -18,12 +18,12 @@ class _AddressInfosViewState extends ConsumerState<AddressInfosView> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => AddAddressView()));
+              MaterialPageRoute(builder: (context) => const AddAddressView()));
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Adreslerim",
           style: TextStyle(fontWeight: FontWeight.w600),
         ),
@@ -32,7 +32,7 @@ class _AddressInfosViewState extends ConsumerState<AddressInfosView> {
         padding: AppPadding().pA15,
         child: Column(
           children: [
-            Row(
+            const Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Icon(Icons.info_outline_rounded),
@@ -44,19 +44,16 @@ class _AddressInfosViewState extends ConsumerState<AddressInfosView> {
                 SizedBox(width: 2),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
                 itemCount: 4,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    margin: EdgeInsets.only(bottom: 12),
+                    margin: const EdgeInsets.only(bottom: 12),
                     decoration: BoxDecoration(
-                      borderRadius:
-                          BorderRadius.circular(10.0), // Kenar yuvarlaklığı
-                      border: Border.all(
-                          color:
-                              Colors.grey[300]!), // Çerçeve rengi ve kalınlığı
+                      borderRadius: BorderRadius.circular(10.0),
+                      border: Border.all(color: Colors.grey[300]!),
                     ),
                     padding: AppPadding().pA15,
                     child: Row(
@@ -71,8 +68,8 @@ class _AddressInfosViewState extends ConsumerState<AddressInfosView> {
                                   Icons.home_outlined,
                                   color: Colors.grey.shade700,
                                 ),
-                                SizedBox(width: 4),
-                                Text(
+                                const SizedBox(width: 4),
+                                const Text(
                                   "Enes Ev",
                                   style: TextStyle(
                                     fontSize: 16,
@@ -81,7 +78,7 @@ class _AddressInfosViewState extends ConsumerState<AddressInfosView> {
                                 )
                               ],
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 2,
                             ),
                             Text(
@@ -95,7 +92,7 @@ class _AddressInfosViewState extends ConsumerState<AddressInfosView> {
                         IconButton(
                           padding: EdgeInsets.zero,
                           onPressed: () {},
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.edit_note_outlined,
                             color: Colors.deepPurple,
                           ),

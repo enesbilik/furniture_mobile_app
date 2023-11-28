@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:furniture_mobile_app/constants/paddings.dart';
+import 'package:furniture_mobile_app/view/all_categories/all_categories_riverpod.dart';
 import 'package:furniture_mobile_app/view/all_categories/all_categories_view.dart';
 import 'package:furniture_mobile_app/view/home/home_riverpod.dart';
 import 'package:furniture_mobile_app/widgets/category_card.dart';
@@ -16,9 +17,24 @@ class HomeView extends ConsumerStatefulWidget {
 }
 
 class _HomeViewState extends ConsumerState<HomeView> {
+  late TextEditingController controller1;
+
+  @override
+  void initState() {
+    super.initState();
+    controller1 = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    controller1.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     var watch = ref.watch(homeRiverpod);
+    var readAllCategoriesRiverpod = ref.watch(allCategoriesRiverpod);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -27,10 +43,13 @@ class _HomeViewState extends ConsumerState<HomeView> {
             children: [
               Padding(
                 padding: AppPadding().pA15,
-                child: const CustomTextField(
-                  autofocus: true,
+                child: CustomTextField(
+                  autofocus: false,
                   hintText: 'Search Furniture',
-                  icon: Icon(Icons.search_outlined),
+                  controller: controller1,
+                  icon: const Icon(
+                    Icons.search_outlined,
+                  ),
                 ),
               ),
               const SizedBox(height: 10),
@@ -67,20 +86,25 @@ class _HomeViewState extends ConsumerState<HomeView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Category",
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
                     ),
                     TextButton(
                       onPressed: () {
+                        readAllCategoriesRiverpod.setSelectedCategoryIndex(
+                            readAllCategoriesRiverpod.categoryNameList
+                                .indexOf("All"));
+
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => AllCategoriesView()),
+                            builder: (context) => const AllCategoriesView(),
+                          ),
                         );
                       },
-                      child: Text("See All"),
+                      child: const Text("See All"),
                     ),
                   ],
                 ),
@@ -90,15 +114,29 @@ class _HomeViewState extends ConsumerState<HomeView> {
               ),
               Padding(
                 padding: AppPadding().pH15,
-                child: SizedBox(
-                  height: MediaQuery.sizeOf(context).width / 3.5,
+                child: const SizedBox(
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CategoryCard(imageUrl: "imageUrl", title: "title"),
-                      CategoryCard(imageUrl: "imageUrl", title: "title"),
-                      CategoryCard(imageUrl: "imageUrl", title: "title"),
-                      CategoryCard(imageUrl: "imageUrl", title: "title"),
+                      CategoryCard(
+                        imageUrl:
+                            "https://image-ikea.mncdn.com/urunler/2000_2000/PE514839.jpg",
+                        title: "Sofa",
+                      ),
+                      CategoryCard(
+                        imageUrl:
+                            "https://image-ikea.mncdn.com/urunler/500_500/PE736167.jpg",
+                        title: "Chair",
+                      ),
+                      CategoryCard(
+                        imageUrl:
+                            "https://image-ikea.mncdn.com/urunler/500_500/PE740884.jpg",
+                        title: "Table",
+                      ),
+                      CategoryCard(
+                        imageUrl:
+                            "https://image-ikea.mncdn.com/urunler/2000_2000/PE802888.jpg",
+                        title: "Bed",
+                      ),
                     ],
                   ),
                 ),

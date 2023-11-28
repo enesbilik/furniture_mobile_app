@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		er4pYhMCR4dZCDHealXuIG4uxkI=
+		Z/oGMxMr5yfHg4cNc6u/1f9MhbM=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		OXFTn5nKDHK9SlvnV9ZAB0PXV0c=
+		O0JP/VycsKhFrm5fmx/F5D+ZWM8=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -22,15 +22,23 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		xyIP8ly3NUKN35u000OmNe9F3es=
+		5T2i4SceT4hFjOqoJVdcTcXRwRM=
 		</data>
 		<key>flutter_assets/assets/.DS_Store</key>
 		<data>
 		CNyMCeGqTr40SD/7vInWKqIQ1Mg=
 		</data>
+		<key>flutter_assets/assets/icons/family-sofa.svg</key>
+		<data>
+		kCIWvCwrLs/7/CWJakMAqjSLrYQ=
+		</data>
 		<key>flutter_assets/assets/lotties/forgot_password_lottie.json</key>
 		<data>
 		MSHP2vnneNUPkJzHBEdyM/vkVZA=
+		</data>
+		<key>flutter_assets/assets/lotties/loading.json</key>
+		<data>
+		9KHG8ZWa2t8qbbRY0mBs52u/G1M=
 		</data>
 		<key>flutter_assets/assets/lotties/login_lottie.json</key>
 		<data>
@@ -38,7 +46,7 @@
 		</data>
 		<key>flutter_assets/assets/lotties/reset_password_lottie.json</key>
 		<data>
-		lc88ijmIzslWaR0RCnjeB1b6hhw=
+		eNDEJSEwXmnIaRP4blA07pE8E4I=
 		</data>
 		<key>flutter_assets/assets/lotties/sign_up_lottie.json</key>
 		<data>
@@ -58,7 +66,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		TNOZoBIAlJ600P8Ceqv+DxESSgA=
+		sVH1W1ayhMHuxLGsY11JJrGULnQ=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -79,14 +87,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZwItpSSsj9RBD3HKjlo7vof4fY97VYQASk1zSUw2F34=
+			/7CyyptQcK1O4fEBXysgdvnKVl5NTYV0XuYeiMHhzHM=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nKmGE853bEKGwZWG3nDnwvb6HXu0aOdSwwnVz+nD9Z8=
+			hd2uOlVpwBfNkDEuy69HSfB4kzi20mwFTUBEJKLRoSA=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -100,7 +108,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M59aCQOm1mS0viEKa5PegdSh24+cDsb3C4mt7Xgb2BQ=
+			l7jt1HL7xoZz/OdFxrQVvYz14wXunxvPeiq02kFu+Rs=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/icons/family-sofa.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8QZ/T0VOCuiS1nD6AkPOhJ3N7MFWYzaSP73XPBjXyxg=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/lotties/forgot_password_lottie.json</key>
@@ -108,6 +123,13 @@
 			<key>hash2</key>
 			<data>
 			XMfMrzNPR3vBJ0PZ6Ofxbfo4xx+IehS18ISGRG8w8nw=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/lotties/loading.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			osQ5oF1jid/FDawJWd+fQwobKRQLBtyMyvGrIa0kuEo=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/lotties/login_lottie.json</key>
@@ -121,7 +143,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xeyz9saWr3MAEaJQ7uQZ3DLxXCN+Ukr8QJ9Tw7Ff9Lg=
+			yEZiAWO8D+JyQZE3RfSsihsOfauOi1MMxpkJeQEmBhc=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/lotties/sign_up_lottie.json</key>
@@ -156,7 +178,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VUjUL3FgSH89VKx0zVh7OBxi14KuMlU6vRFYR1pat6w=
+			MgMQIeJ/zpADNqWTMks3Q7ojNuarOzyB7XSHYP3sPio=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

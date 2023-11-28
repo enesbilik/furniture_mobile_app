@@ -26,14 +26,27 @@ class ProductCard extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => ProductDetailView()),
+                MaterialPageRoute(
+                  builder: (context) => const ProductDetailView(),
+                ),
               );
             },
             child: Container(
               padding: AppPadding().pA20,
               decoration: BoxDecoration(
+                color: Colors.white,
                 borderRadius: AppBorder().brA10,
-                color: Colors.grey[200],
+                border: Border.all(
+                  color: Colors.grey[100]!,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.2),
+                    spreadRadius: 0.6,
+                    blurRadius: 3,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
               ),
               child: Padding(
                 padding: AppPadding().pA20,

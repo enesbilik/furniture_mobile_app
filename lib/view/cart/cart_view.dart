@@ -52,13 +52,14 @@ class _CartViewState extends ConsumerState<CartView> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Total:",
                     style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
                   ),
                   Text(
                     "\$${watch.totalPrice}",
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+                    style: const TextStyle(
+                        fontSize: 22, fontWeight: FontWeight.w700),
                   ),
                 ],
               ),

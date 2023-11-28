@@ -34,21 +34,21 @@ class AddAddressView extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
             const CustomAddressField(
               labelText: 'Telefon',
               hintText: "+90 5xxxxxxxxxx",
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
             // Şehir ve ilçe alanları
             const CustomAddressField(
               labelText: 'İl',
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 15),
             const CustomAddressField(
               labelText: 'İlçe',
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 15),
 
             const CustomAddressField(
               labelText: 'Adres',
@@ -56,7 +56,7 @@ class AddAddressView extends StatelessWidget {
               maxLines: 2,
               maxLength: 128,
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 15),
 
             const CustomAddressField(
               labelText: 'Adres ismi',

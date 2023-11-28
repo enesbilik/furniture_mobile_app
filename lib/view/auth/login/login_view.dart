@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:furniture_mobile_app/cache/cache_manager.dart';
 import 'package:furniture_mobile_app/validation/validation_mixin.dart';
 import 'package:furniture_mobile_app/view/auth/forgot_password/forgot_password_view.dart';
 import 'package:furniture_mobile_app/view/auth/register/register_view.dart';
@@ -63,8 +64,9 @@ class LoginView extends ConsumerWidget with CustomValidation {
                 Align(
                   alignment: Alignment.center,
                   child: CustomButton(
-                      text: "Giriş Yap",
-                      onPressed: () => _handleLogin(context)),
+                    text: "Giriş Yap",
+                    onPressed: () => _handleLogin(context),
+                  ),
                 ),
                 const SizedBox(height: 10),
                 _buildRegisterButton(context),
@@ -118,6 +120,7 @@ class LoginView extends ConsumerWidget with CustomValidation {
   }
 
   void _loginsucceeded(BuildContext context) {
+    CacheManager().writeStringValue(CacheKeys.token, "token");
     Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(builder: (context) => const SkeletonView()),

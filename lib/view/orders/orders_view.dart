@@ -14,7 +14,7 @@ class _OrdersViewState extends ConsumerState<OrdersView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Siparişlerim",
           style: TextStyle(fontWeight: FontWeight.w600),
         ),
@@ -25,7 +25,7 @@ class _OrdersViewState extends ConsumerState<OrdersView> {
           itemCount: 7,
           itemBuilder: (BuildContext context, int index) {
             return Container(
-              margin: EdgeInsets.only(bottom: 16),
+              margin: const EdgeInsets.only(bottom: 16),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
                 border: Border.all(color: Colors.grey[300]!),
@@ -55,7 +55,7 @@ class _OrdersViewState extends ConsumerState<OrdersView> {
                           ),
                         ),
                       ),
-                      Spacer(
+                      const Spacer(
                         flex: 2,
                       ),
                       Column(
@@ -71,12 +71,12 @@ class _OrdersViewState extends ConsumerState<OrdersView> {
                           ),
                         ],
                       ),
-                      Spacer(
+                      const Spacer(
                         flex: 3,
                       ),
                       Column(
                         children: [
-                          Text(
+                          const Text(
                             "12.999,00 TL",
                             style: TextStyle(
                               color: Colors.green,
@@ -92,7 +92,7 @@ class _OrdersViewState extends ConsumerState<OrdersView> {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
                   Row(
@@ -105,7 +105,7 @@ class _OrdersViewState extends ConsumerState<OrdersView> {
                             ? Colors.grey.shade700
                             : Colors.green,
                       ),
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       Text(index % 2 == 0 ? "Kargoya verildi" : "Tamamlandı"),
                     ],
                   )

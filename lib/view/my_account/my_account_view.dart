@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:furniture_mobile_app/cache/cache_manager.dart';
 import 'package:furniture_mobile_app/view/address_infos/address_infos_view.dart';
 import 'package:furniture_mobile_app/view/auth/login/login_view.dart';
+import 'package:furniture_mobile_app/view/auth/personal_infos/personal_infos_view.dart';
+import 'package:furniture_mobile_app/view/change_password/change_password_view.dart';
 import 'package:furniture_mobile_app/view/orders/orders_view.dart';
 
 class MyAccountView extends ConsumerWidget {
@@ -11,7 +14,7 @@ class MyAccountView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "My Account",
           style: TextStyle(fontWeight: FontWeight.w600),
         ),
@@ -20,54 +23,72 @@ class MyAccountView extends ConsumerWidget {
         child: ListView(
           children: [
             ListTile(
-              leading: Icon(Icons.person),
-              title: Text("Kullanıcı Bilgilerim"),
-              trailing: Icon(Icons.arrow_forward_ios_rounded),
-              onTap: () {},
-              contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+              leading: const Icon(Icons.person),
+              title: const Text("Kullanıcı Bilgilerim"),
+              trailing: const Icon(Icons.arrow_forward_ios_rounded),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const PersonalInfosView()),
+                );
+              },
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
             ),
             ListTile(
-              leading: Icon(Icons.location_on),
-              title: Text("Adreslerim"),
-              trailing: Icon(Icons.arrow_forward_ios_rounded),
+              leading: const Icon(Icons.location_on),
+              title: const Text("Adreslerim"),
+              trailing: const Icon(Icons.arrow_forward_ios_rounded),
               onTap: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => AddressInfosView()));
+                        builder: (context) => const AddressInfosView()));
               },
-              contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
             ),
             ListTile(
-              leading: Icon(Icons.shopping_basket),
-              title: Text("Siparişlerim"),
-              trailing: Icon(Icons.arrow_forward_ios_rounded),
+              leading: const Icon(Icons.shopping_basket),
+              title: const Text("Siparişlerim"),
+              trailing: const Icon(Icons.arrow_forward_ios_rounded),
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => OrdersView()),
+                  MaterialPageRoute(builder: (context) => const OrdersView()),
                 );
               },
-              contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
             ),
             ListTile(
-              leading: Icon(Icons.lock),
-              title: Text("Şifre Değişikliği"),
-              trailing: Icon(Icons.arrow_forward_ios_rounded),
-              onTap: () {},
-              contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 4),
-            ),
-            ListTile(
-              leading: Icon(Icons.exit_to_app),
-              title: Text("Çıkış Yap"),
-              trailing: Icon(Icons.arrow_forward_ios_rounded),
+              leading: const Icon(Icons.lock),
+              title: const Text("Şifre Değişikliği"),
+              trailing: const Icon(Icons.arrow_forward_ios_rounded),
               onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ChangePasswordView()),
+                );
+              },
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
+            ),
+            ListTile(
+              leading: const Icon(Icons.exit_to_app),
+              title: const Text("Çıkış Yap"),
+              trailing: const Icon(Icons.arrow_forward_ios_rounded),
+              onTap: () {
+                CacheManager().writeStringValue(CacheKeys.token, null);
                 Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(builder: (context) => LoginView()),
                     (route) => false);
               },
-              contentPadding: EdgeInsets.symmetric(horizontal: 15, vertical: 4),
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
             ),
           ],
         ),

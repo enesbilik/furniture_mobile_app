@@ -42,7 +42,7 @@ class _CartProductCardState extends ConsumerState<CartProductCard> {
             ),
           ),
           const SizedBox(
-            width: 4,
+            width: 6,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

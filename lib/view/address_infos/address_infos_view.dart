@@ -47,7 +47,7 @@ class _AddressInfosViewState extends ConsumerState<AddressInfosView> {
             const SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
-                itemCount: 4,
+                itemCount: 1,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
                     margin: const EdgeInsets.only(bottom: 12),
@@ -93,7 +93,7 @@ class _AddressInfosViewState extends ConsumerState<AddressInfosView> {
                           padding: EdgeInsets.zero,
                           onPressed: () {},
                           icon: const Icon(
-                            Icons.edit_note_outlined,
+                            Icons.edit,
                             color: Colors.deepPurple,
                           ),
                         )

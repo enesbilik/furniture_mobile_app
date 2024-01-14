@@ -1,11 +1,19 @@
+import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:furniture_mobile_app/constants/paddings.dart';
+import 'package:furniture_mobile_app/models/product_model.dart';
+import 'package:furniture_mobile_app/view/cart/cart_riverpod.dart';
+import 'package:furniture_mobile_app/view/favorites/favorites_riverpod.dart';
 import 'package:furniture_mobile_app/view/product_detail/product_detail_riverpod.dart';
 
 class ProductDetailView extends ConsumerStatefulWidget {
-  const ProductDetailView({super.key});
+  final ProductModel productModel;
+  const ProductDetailView({
+    super.key,
+    required this.productModel,
+  });
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() =>
@@ -17,16 +25,25 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
   Widget build(BuildContext context) {
     var height = MediaQuery.sizeOf(context).height;
     var watch = ref.watch(productDetailRiverpod);
+    var watchFavorites = ref.watch(favoritesRiverpod);
+    var watchCart = ref.watch(cartRiverpod);
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Detail"),
+        title: const Text("Mobilya Detayı"),
         actions: [
           IconButton(
             onPressed: () {
-              watch.changeFavoriteState();
+              if (widget.productModel.isFavorite) {
+                watchFavorites.removeProduct(widget.productModel);
+              } else {
+                watchFavorites.addProduct(widget.productModel);
+              }
+
+              watch.changeFavoriteState(widget.productModel);
             },
             icon: Icon(
-              watch.product.isFavorite
+              widget.productModel.isFavorite
                   ? Icons.favorite
                   : Icons.favorite_border_outlined,
             ),
@@ -44,18 +61,14 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                     autoPlay: true,
                     viewportFraction: 1,
                   ),
-                  items: watch.product.images.map((i) {
-                    return Builder(
-                      builder: (BuildContext context) {
-                        return Image.network(
-                          i,
-                          height: 200,
-                          width: double.infinity,
-                          fit: BoxFit.contain,
-                        );
-                      },
-                    );
-                  }).toList(),
+                  items: [
+                    Image.network(
+                      widget.productModel.imageUrl,
+                      height: 200,
+                      width: double.infinity,
+                      fit: BoxFit.contain,
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 20),
                 Padding(
@@ -66,8 +79,9 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                       Row(
                         children: [
                           Text(
-                            watch.product.subtitle,
+                            widget.productModel.title,
                             style: TextStyle(
+                              fontSize: 22,
                               color: Colors.grey.shade800,
                             ),
                           ),
@@ -76,19 +90,12 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                             Icons.star_half_rounded,
                             color: Colors.amber,
                           ),
-                          const Text("4.5")
+                          Text(widget.productModel.rating.toString())
                         ],
-                      ),
-                      Text(
-                        watch.product.title,
-                        style: TextStyle(
-                          fontSize: 22,
-                          color: Colors.grey.shade800,
-                        ),
                       ),
                       const SizedBox(height: 25),
                       Text(
-                        "Description",
+                        "Açıklama",
                         style: TextStyle(
                           fontSize: 18,
                           color: Colors.grey.shade800,
@@ -97,14 +104,17 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                       const SizedBox(height: 5),
                       Text(
                         watch.isExpanded
-                            ? watch.product.description
-                            : watch.product.description.substring(0, 300),
+                            ? widget.productModel.description
+                            : widget.productModel.description.length > 200
+                                ? widget.productModel.description
+                                    .substring(0, 200)
+                                : widget.productModel.description,
                         style: TextStyle(
                           fontSize: 14,
                           color: Colors.grey.shade800,
                         ),
                       ),
-                      if (watch.product.description.length > 200)
+                      if (widget.productModel.description.length > 200)
                         GestureDetector(
                           onTap: () {
                             watch.changeIsExpanded();
@@ -144,13 +154,13 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Total Price",
+                      "Fiyat",
                       style: TextStyle(
                         color: Colors.grey.shade800,
                       ),
                     ),
                     Text(
-                      "\$${watch.product.price}",
+                      "${widget.productModel.price} TL",
                       style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w700,
@@ -166,7 +176,17 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.deepPurple),
-                    onPressed: () {},
+                    onPressed: () {
+                      var cartProductModel = widget.productModel.toCartModel();
+                      watchCart.addProductToCart(cartProductModel);
+                      AnimatedSnackBar.material(
+                        'Ürün sepete eklendi',
+                        type: AnimatedSnackBarType.success,
+                        mobileSnackBarPosition: MobileSnackBarPosition.top,
+                        borderRadius: BorderRadius.circular(12),
+                        duration: Duration(seconds: 2),
+                      ).show(context);
+                    },
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -178,7 +198,7 @@ class _ProductDetailViewState extends ConsumerState<ProductDetailView> {
                           width: 4,
                         ),
                         Text(
-                          "Add to Cart",
+                          "Sepete Ekle",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 20,

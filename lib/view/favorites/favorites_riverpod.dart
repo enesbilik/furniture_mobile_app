@@ -12,30 +12,15 @@ class FavoritesRiverpod extends ChangeNotifier {
     }
   }
 
-  var favoritesProduct = [
-    const ProductModel(
-      imageUrl: "https://image-ikea.mncdn.com/urunler/2000_2000/PE873451.jpg",
-      title: "Sofa",
-      price: 299.50,
-      rating: 2.5,
-    ),
-    const ProductModel(
-      imageUrl: "https://image-ikea.mncdn.com/urunler/2000_2000/PE802888.jpg",
-      title: "Bed",
-      price: 1500.50,
-      rating: 4.3,
-    ),
-    const ProductModel(
-      imageUrl: "https://image-ikea.mncdn.com/urunler/2000_2000/PE514839.jpg",
-      title: "Sofa",
-      price: 299.50,
-      rating: 2.5,
-    ),
-    const ProductModel(
-      imageUrl: "https://image-ikea.mncdn.com/urunler/2000_2000/PE873451.jpg",
-      title: "Bed",
-      price: 1500.50,
-      rating: 4.3,
-    ),
-  ];
+  void removeProduct(ProductModel product) {
+    favoritesProduct.remove(product);
+    notifyListeners();
+  }
+
+  void addProduct(ProductModel productModel) {
+    favoritesProduct.add(productModel);
+    notifyListeners();
+  }
+
+  var favoritesProduct = [];
 }

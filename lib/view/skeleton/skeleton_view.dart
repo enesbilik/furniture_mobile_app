@@ -43,7 +43,7 @@ class _SkeletonViewState extends ConsumerState<SkeletonView> {
           icon: Icon(
             Icons.favorite_outline_rounded,
           ),
-          label: "Listelerim",
+          label: "Favorilerim",
         ),
         BottomNavigationBarItem(
           icon: Icon(

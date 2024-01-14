@@ -19,76 +19,73 @@ class _CartViewState extends ConsumerState<CartView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "My Cart",
+          "Sepetim",
           style: TextStyle(fontWeight: FontWeight.w600),
         ),
       ),
       body: SafeArea(
-        child: Padding(
-          padding: AppPadding().pH15,
-          child: Column(
-            children: [
-              // Text(
-              //   "My Cart",
-              //   style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700),
-              // ),
-              // SizedBox(
-              //   height: 15,
-              // ),
-              Expanded(
-                // height: MediaQuery.sizeOf(context).height * 0.5,
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: watch.cartProducts.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    var product = watch.cartProducts[index];
-                    return CartProductCard(product, index);
-                  },
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    "Total:",
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
-                  ),
-                  Text(
-                    "\$${watch.totalPrice}",
-                    style: const TextStyle(
-                        fontSize: 22, fontWeight: FontWeight.w700),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              SizedBox(
-                height: 56,
-                width: 200,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.deepPurple),
-                  onPressed: () {},
-                  child: const Text(
-                    "Tamamla",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
+        child: watch.cartProducts.isEmpty
+            ? const Center(
+                child: Text("Sepetinizde ürün bulunmuyor"),
+              )
+            : Padding(
+                padding: AppPadding().pH15,
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: watch.cartProducts.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          var product = watch.cartProducts[index];
+                          return CartProductCard(product, index);
+                        },
+                      ),
                     ),
-                  ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          "Toplam:",
+                          style: TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.w700),
+                        ),
+                        Text(
+                          "${watch.totalPrice.toStringAsFixed(2)} TL",
+                          style: const TextStyle(
+                              fontSize: 22, fontWeight: FontWeight.w700),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    SizedBox(
+                      height: 56,
+                      width: 200,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.deepPurple),
+                        onPressed: () {},
+                        child: const Text(
+                          "Onayla",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(
-                height: 10,
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }

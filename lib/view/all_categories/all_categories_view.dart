@@ -76,11 +76,7 @@ class _AllCategoriesViewState extends ConsumerState<AllCategoriesView> {
                           watch.categoryNameList[watch.selectedCategoryIndex]]!
                       .elementAt(index);
                   return ProductCard(
-                    title: product["title"] as String,
-                    price: 17.5,
-                    rating: 3.5,
-                    imageUrl:
-                        "https://static.vecteezy.com/system/resources/previews/011/794/199/non_2x/fabric-armchair-soft-cushion-with-metal-leg-3d-rendering-modern-interior-design-for-living-room-free-png.png",
+                    productModel: product,
                   );
                 },
               ),

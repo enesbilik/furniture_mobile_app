@@ -4,28 +4,7 @@ class CustomSearchDelegate extends SearchDelegate {
   @override
   String get searchFieldLabel => 'Mobilya ara';
 
-  var searchTerms = [
-    'Kanepe',
-    'Koltuk',
-    'Masa',
-    'Sandalye',
-    'Yatak',
-    'Sehpa',
-    'Dolap',
-    'Kitaplık',
-    'Komodin',
-    'Yatak Başlığı',
-    'Baza',
-    'TV Ünitesi',
-    'Çalışma Masası',
-    'Yemek Masası',
-    'Portmanto',
-    'Banyo Dolabı',
-    'Sehpalar Seti',
-    'Sürgülü Dolap',
-    'Çekyat',
-    'Şifonyer',
-  ];
+  var searchTerms = ["Koltuk", "Sandalye", "Masa", "Yatak", "Sehpa"];
 
   @override
   List<Widget>? buildActions(BuildContext context) {

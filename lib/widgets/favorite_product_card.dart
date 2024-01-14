@@ -34,7 +34,9 @@ class _FavoriteProductCardState extends ConsumerState<FavoriteProductCard> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const ProductDetailView(),
+                  builder: (context) => ProductDetailView(
+                    productModel: widget.productModel,
+                  ),
                 ),
               );
             },

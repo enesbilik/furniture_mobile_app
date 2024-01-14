@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		CfL4YT2Wice2fiM9Lp9/sqKfw/g=
+		RSBAdjpnzmOYd/daR9cM7BWFhWA=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		eFO16Z7aYnr87PzUZYL9Hr9+tKQ=
+		CPbdOcS6++LWxlyMH9EMI7xq1N4=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		Z/oGMxMr5yfHg4cNc6u/1f9MhbM=
+		kpGfZtWW1tzvVL/1t3JwWx/Yauk=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		O0JP/VycsKhFrm5fmx/F5D+ZWM8=
+		IqVXyXVwo6y7EJFZc/rwRc2kJzY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		5T2i4SceT4hFjOqoJVdcTcXRwRM=
+		Q8Gr0EaA4cnn7b2PiUZZNoXf7R8=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/family-sofa.svg</key>
 		<data>
@@ -110,7 +110,43 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		sVH1W1ayhMHuxLGsY11JJrGULnQ=
+		XPvyM/yMUDkLlC3juWwyzI1RD2Q=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/monochrome/check-circle.svg</key>
+		<data>
+		Cp17vrfIFL7TwNSjTTLzbBd0nsE=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/monochrome/comment-dots.svg</key>
+		<data>
+		0Te/T+n1dYzXYlpBeIncoCy9df8=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/monochrome/exclamation-circle.svg</key>
+		<data>
+		X0fCMWeaGqHH2RaiqXCnYu2eJQo=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/monochrome/exclamation-octagon.svg</key>
+		<data>
+		PGGSVDeKITxDfoxmRybtQKRCDKA=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/monochrome/exclamation-triangle.svg</key>
+		<data>
+		LgkpBSJfYU6qJ2fJZRKjY2IKL48=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/regular/check-circle.svg</key>
+		<data>
+		I/Fl2sTBQzXwxmRXEsB8Z11getE=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/regular/exclamation-circle.svg</key>
+		<data>
+		WAMeJ1cmtlKYxZfzoBOVLU2FGdg=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/regular/exclamation-triangle.svg</key>
+		<data>
+		etDRGXo0DsWRuqavn8tjgu4sKOU=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/regular/info-circle.svg</key>
+		<data>
+		1uSWKpmrzq5m3HowOwZVrr2Wurw=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -210,19 +246,19 @@
 		</data>
 		<key>Frameworks/path_provider_foundation.framework/Info.plist</key>
 		<data>
-		J0pqvSfoeOVYUSVsOU5ryaEUpWg=
+		jDRf8wKIVG/U/O0SSg6srD8qMl8=
 		</data>
 		<key>Frameworks/path_provider_foundation.framework/_CodeSignature/CodeResources</key>
 		<data>
-		F/OcNdWXT6QgAJCYt4eInfvluCY=
+		v9iMILrn+XqiCTWqqiehqvo2+XU=
 		</data>
 		<key>Frameworks/path_provider_foundation.framework/path_provider_foundation</key>
 		<data>
-		seny5sqg5FjWm1PQXFaJpGl/u/k=
+		jk5vNaVeIjB7q1aFcpDDV5oOarA=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		7JHJh//KxLZNtxYXx907HGX4txM=
+		aEmUc+Zur0FyOo2KRkrvUXO53lg=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -305,7 +341,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			abDRx07dh6Iv+1nHqg6g5lhaSPiEQ1d74lDBag1/Gmc=
+			msf7sVTD95uZLu3oocBGi8IGAn+aIaMp0jcyxx5W6y4=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -319,21 +355,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			z7Vdr9wI/aoTMt08aMZOGpbPW7iyGqCHkVNKF630fk4=
+			y7XNfxb+RsnSfyoUROw55+PDk7eV3UQ0UG10L/cux64=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/7CyyptQcK1O4fEBXysgdvnKVl5NTYV0XuYeiMHhzHM=
+			zr0JAat1f47aKa/MNSq3BUitUVdfJ76W87ZISHdbWGg=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hd2uOlVpwBfNkDEuy69HSfB4kzi20mwFTUBEJKLRoSA=
+			jBfscgXhRhQocNnVxRVsGi50mG8/T3Nzxx0lEQe5v6Q=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -347,7 +383,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			l7jt1HL7xoZz/OdFxrQVvYz14wXunxvPeiq02kFu+Rs=
+			oVblrBCJd61HOaU2O69oFreNhT0KOtZyuIMvPx/bXEk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/icons/family-sofa.svg</key>
@@ -417,7 +453,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MgMQIeJ/zpADNqWTMks3Q7ojNuarOzyB7XSHYP3sPio=
+			INHty2VDCoe/MQIwVmBCJZfosW4GTo6fqOZaux5d3J0=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/monochrome/check-circle.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HVCiEZTNpKQSIcBNu/ndUnrhLSJ2XAs5hnB7+w1CWoo=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/monochrome/comment-dots.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			szP1XNuBSfH2ay1rd3RRMSUMZeBx62siofSPZvhUrYk=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/monochrome/exclamation-circle.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Vg9eEEDqbZOg+bnTO5F4adwoP9/RxWMJg+b6mlxSp6w=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/monochrome/exclamation-octagon.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HhPvNnujCjWqr1AnP5Fq/W0f5g2PsDV+AoMinA0zXMg=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/monochrome/exclamation-triangle.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mPqA8vQTHtyGmADas/L4tklZcuh/W1zRGZfTmCVRMoM=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/regular/check-circle.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			G4oGpQphJHJnHUF1vK9V5XFfAZMSCdalFYuQ2Qk39YA=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/regular/exclamation-circle.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/qErfDqIGTuHuIqJjntD4f1JMFpH6OBwdKgiy1B3dws=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/regular/exclamation-triangle.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			B0nQSCissdaGJClI2nRIqBjiiWFACiMbZcmtudqHdY4=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/packages/animated_snack_bar/assets/regular/info-circle.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6YmmAUuYd/Z5M0BsJ5laK/Dc4A7RBOa7BZDQ/0mkN4A=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -592,21 +691,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			V6IH0GgcUp8zNTBjvHxD/ltRDTH5IF3/puZg5p6IoIc=
+			OBea7e958pb5ZWMG3wmlh0C6U8IuttahCYnLlCO/poo=
 			</data>
 		</dict>
 		<key>Frameworks/path_provider_foundation.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6MXxVmeBwbmt+4/s9dVh9y/8do3L463AreaGV95fT5o=
+			W+XaytZGYLtPLk7ddjWo/69GmfAKOUHLAIVzo8Ir/Pc=
 			</data>
 		</dict>
 		<key>Frameworks/path_provider_foundation.framework/path_provider_foundation</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hpFqcCP5xWKbJSHYXV+3OZId1jSAe6YRHuKWf2E2tCY=
+			7A/45CUgC2riq6hLQnDq9pLklCjUjwaJYSN6lF1rvK8=
 			</data>
 		</dict>
 	</dict>

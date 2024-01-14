@@ -1,58 +1,40 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter/material.dart';
 
 final cartRiverpod = ChangeNotifierProvider((_) => CartRiverpod());
 
 class CartRiverpod extends ChangeNotifier {
-  double totalPrice = 0;
-
-  void updateTotalPrice() {
-    totalPrice = 0;
-    for (var product in cartProducts) {
-      double productPrice =
-          double.parse(product.price.replaceAll('\$', '').replaceAll('.', ''));
-      totalPrice += productPrice * (product.amount);
-    }
-    totalPrice /= 100;
-    notifyListeners();
-  }
+  double get totalPrice => cartProducts.fold(
+        0,
+        (previousValue, element) => previousValue += double.parse(
+                element.price.replaceAll('\$', '').replaceAll('.', '')) *
+            element.amount /
+            10,
+      );
 
   var cartProducts = [
-    CartProductModel(
-        title: "Stylish Chair",
-        price: "\$150.00",
-        imageUrl:
-            "https://image-ikea.mncdn.com/urunler/2000_2000/PE873451.jpg"),
-    CartProductModel(
-        title: "Coffee Table",
-        price: "\$99.99",
-        amount: 4,
-        imageUrl:
-            "https://image-ikea.mncdn.com/urunler/2000_2000/PE873451.jpg"),
-    CartProductModel(
-        title: "Side Table",
-        price: "\$49.99",
-        imageUrl:
-            "https://image-ikea.mncdn.com/urunler/2000_2000/PE802888.jpg"),
-    CartProductModel(
-        title: "Rug",
-        price: "\$69.00",
-        amount: 3,
-        imageUrl:
-            "https://image-ikea.mncdn.com/urunler/2000_2000/PE514839.jpg"),
-    CartProductModel(
-        title: "Throw Pillow",
-        price: "\$9.99",
-        imageUrl:
-            "https://image-ikea.mncdn.com/urunler/2000_2000/PE873451.jpg"),
+    // CartProductModel(
+    //     title: "Stylish Chair",
+    //     price: "\$150.00",
+    //     imageUrl:
+    //         "https://image-ikea.mncdn.com/urunler/2000_2000/PE873451.jpg"),
   ];
+
+  void addProductToCart(CartProductModel cartProductModel) {
+    for (int i = 0; i < cartProducts.length; i++) {
+      if (cartProducts[i].title == cartProductModel.title) {
+        cartProducts[i].amount++;
+        return;
+      }
+    }
+    cartProducts.insert(0, cartProductModel);
+  }
 
   void incrementProductAmount(int index) {
     if (index >= 0 && index < cartProducts.length) {
       cartProducts[index].amount++;
       notifyListeners();
     }
-    updateTotalPrice();
   }
 
   void decrementProductAmount(int index) {
@@ -67,7 +49,6 @@ class CartRiverpod extends ChangeNotifier {
       }
       notifyListeners();
     }
-    updateTotalPrice();
   }
 }
 

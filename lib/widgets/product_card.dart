@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_mobile_app/constants/borders.dart';
 import 'package:furniture_mobile_app/constants/paddings.dart';
+import 'package:furniture_mobile_app/models/product_model.dart';
 import 'package:furniture_mobile_app/view/product_detail/product_detail_view.dart';
 
 class ProductCard extends StatelessWidget {
-  final String imageUrl;
-  final String title;
-  final double price;
-  final double rating;
+  final ProductModel productModel;
   const ProductCard({
     Key? key,
-    required this.imageUrl,
-    required this.title,
-    required this.price,
-    required this.rating,
+    required this.productModel,
   }) : super(key: key);
 
   @override
@@ -27,7 +22,9 @@ class ProductCard extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const ProductDetailView(),
+                  builder: (context) => ProductDetailView(
+                    productModel: productModel,
+                  ),
                 ),
               );
             },
@@ -50,7 +47,7 @@ class ProductCard extends StatelessWidget {
               ),
               child: Padding(
                 padding: AppPadding().pA20,
-                child: Image.network(imageUrl),
+                child: Image.network(productModel.imageUrl),
               ),
             ),
           ),
@@ -62,9 +59,9 @@ class ProductCard extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(title),
+                  Text(productModel.title),
                   Text(
-                    "\$$price",
+                    "${productModel.price} ₺",
                     style: const TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
@@ -79,7 +76,7 @@ class ProductCard extends StatelessWidget {
                     color: Colors.amber,
                   ),
                   Text(
-                    price.toString(),
+                    productModel.rating.toString(),
                     style: TextStyle(color: Colors.grey[700]),
                   ),
                 ],

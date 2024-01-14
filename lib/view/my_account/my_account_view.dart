@@ -15,80 +15,90 @@ class MyAccountView extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "My Account",
+          "Hesabım",
           style: TextStyle(fontWeight: FontWeight.w600),
         ),
       ),
       body: SafeArea(
         child: ListView(
           children: [
-            ListTile(
-              leading: const Icon(Icons.person),
-              title: const Text("Kullanıcı Bilgilerim"),
-              trailing: const Icon(Icons.arrow_forward_ios_rounded),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const PersonalInfosView()),
-                );
-              },
-              contentPadding:
-                  const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
-            ),
-            ListTile(
-              leading: const Icon(Icons.location_on),
-              title: const Text("Adreslerim"),
-              trailing: const Icon(Icons.arrow_forward_ios_rounded),
-              onTap: () {
-                Navigator.push(
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.person),
+                title: const Text("Kullanıcı Bilgilerim"),
+                trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                onTap: () {
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const AddressInfosView()));
-              },
-              contentPadding:
-                  const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+                        builder: (context) => const PersonalInfosView()),
+                  );
+                },
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+              ),
             ),
-            ListTile(
-              leading: const Icon(Icons.shopping_basket),
-              title: const Text("Siparişlerim"),
-              trailing: const Icon(Icons.arrow_forward_ios_rounded),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const OrdersView()),
-                );
-              },
-              contentPadding:
-                  const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.location_on),
+                title: const Text("Adreslerim"),
+                trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AddressInfosView()));
+                },
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+              ),
             ),
-            ListTile(
-              leading: const Icon(Icons.lock),
-              title: const Text("Şifre Değişikliği"),
-              trailing: const Icon(Icons.arrow_forward_ios_rounded),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const ChangePasswordView()),
-                );
-              },
-              contentPadding:
-                  const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
-            ),
-            ListTile(
-              leading: const Icon(Icons.exit_to_app),
-              title: const Text("Çıkış Yap"),
-              trailing: const Icon(Icons.arrow_forward_ios_rounded),
-              onTap: () {
-                CacheManager().writeStringValue(CacheKeys.token, null);
-                Navigator.pushAndRemoveUntil(
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.shopping_basket),
+                title: const Text("Siparişlerim"),
+                trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                onTap: () {
+                  Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LoginView()),
-                    (route) => false);
-              },
-              contentPadding:
-                  const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
+                    MaterialPageRoute(builder: (context) => const OrdersView()),
+                  );
+                },
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.lock),
+                title: const Text("Şifre Değişikliği"),
+                trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ChangePasswordView()),
+                  );
+                },
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.exit_to_app),
+                title: const Text("Çıkış Yap"),
+                trailing: const Icon(Icons.arrow_forward_ios_rounded),
+                onTap: () {
+                  CacheManager().writeStringValue(CacheKeys.token, null);
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginView()),
+                      (route) => false);
+                },
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
+              ),
             ),
           ],
         ),

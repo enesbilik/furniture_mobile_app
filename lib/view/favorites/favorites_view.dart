@@ -19,30 +19,35 @@ class _FavoritesViewState extends ConsumerState<FavoritesView> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "My Favorites",
+          "Favorilerim",
           style: TextStyle(fontWeight: FontWeight.w600),
         ),
       ),
       body: SafeArea(
         top: true,
-        child: Padding(
-          padding: AppPadding().pA10,
-          child: SizedBox.expand(
-            child: GridView.builder(
-              padding: EdgeInsets.zero,
-              shrinkWrap: true,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2, childAspectRatio: 0.8),
-              itemCount: watch.favoritesProduct.length,
-              itemBuilder: (BuildContext context, int index) {
-                return FavoriteProductCard(
-                  index: index,
-                  productModel: watch.favoritesProduct[index],
-                );
-              },
-            ),
-          ),
-        ),
+        child: watch.favoritesProduct.isEmpty
+            ? const Center(
+                child: Text("Favori mobilyanız bulunmuyor."),
+              )
+            : Padding(
+                padding: AppPadding().pA10,
+                child: SizedBox.expand(
+                  child: GridView.builder(
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2, childAspectRatio: 0.8),
+                    itemCount: watch.favoritesProduct.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return FavoriteProductCard(
+                        index: index,
+                        productModel: watch.favoritesProduct[index],
+                      );
+                    },
+                  ),
+                ),
+              ),
       ),
     );
   }

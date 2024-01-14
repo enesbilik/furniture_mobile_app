@@ -43,7 +43,7 @@ class LoginView extends ConsumerWidget with CustomValidation {
                 CustomTextField2(
                   controller: _emailController,
                   labelText: 'Email',
-                  hintText: 'example@gmail.com',
+                  hintText: 'ornek@hotmail.com',
                   iconData: Icons.email,
                   validator: validateEmail,
                   textInputType: TextInputType.emailAddress,

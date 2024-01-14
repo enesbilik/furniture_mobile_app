@@ -35,7 +35,9 @@ class _HomeViewState extends ConsumerState<HomeView> {
   @override
   Widget build(BuildContext context) {
     var watch = ref.watch(homeRiverpod);
-    var readAllCategoriesRiverpod = ref.watch(allCategoriesRiverpod);
+    var watchAllCategoriesRiverpod = ref.watch(allCategoriesRiverpod);
+    var productList = watchAllCategoriesRiverpod.productData["Hepsi"]!;
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -92,15 +94,15 @@ class _HomeViewState extends ConsumerState<HomeView> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text(
-                      "Category",
+                      "Kategoriler",
                       style:
                           TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
                     ),
                     TextButton(
                       onPressed: () {
-                        readAllCategoriesRiverpod.setSelectedCategoryIndex(
-                            readAllCategoriesRiverpod.categoryNameList
-                                .indexOf("All"));
+                        watchAllCategoriesRiverpod.setSelectedCategoryIndex(
+                            watchAllCategoriesRiverpod.categoryNameList
+                                .indexOf("Hepsi"));
 
                         Navigator.push(
                           context,
@@ -109,7 +111,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
                           ),
                         );
                       },
-                      child: const Text("See All"),
+                      child: const Text("Hepsini gör"),
                     ),
                   ],
                 ),
@@ -125,22 +127,21 @@ class _HomeViewState extends ConsumerState<HomeView> {
                       CategoryCard(
                         imageUrl:
                             "https://image-ikea.mncdn.com/urunler/2000_2000/PE514839.jpg",
-                        title: "Sofa",
+                        title: "Koltuk",
                       ),
                       CategoryCard(
-                        imageUrl:
-                            "https://image-ikea.mncdn.com/urunler/500_500/PE736167.jpg",
-                        title: "Chair",
-                      ),
+                          imageUrl:
+                              "https://image-ikea.mncdn.com/urunler/500_500/PE736167.jpg",
+                          title: "Sandalye"),
                       CategoryCard(
                         imageUrl:
                             "https://image-ikea.mncdn.com/urunler/500_500/PE740884.jpg",
-                        title: "Table",
+                        title: "Masa",
                       ),
                       CategoryCard(
                         imageUrl:
                             "https://image-ikea.mncdn.com/urunler/2000_2000/PE802888.jpg",
-                        title: "Bed",
+                        title: "Yatak",
                       ),
                     ],
                   ),
@@ -150,7 +151,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
               Padding(
                 padding: AppPadding().pH15,
                 child: const Text(
-                  "Newest",
+                  "En yeniler",
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
                 ),
               ),
@@ -163,14 +164,11 @@ class _HomeViewState extends ConsumerState<HomeView> {
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2, childAspectRatio: 0.8),
-                  itemCount: 20,
+                  itemCount:
+                      watchAllCategoriesRiverpod.productData["Hepsi"]!.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return const ProductCard(
-                      title: "Sofa",
-                      price: 17.5,
-                      rating: 3.5,
-                      imageUrl:
-                          "https://static.vecteezy.com/system/resources/previews/011/794/199/non_2x/fabric-armchair-soft-cushion-with-metal-leg-3d-rendering-modern-interior-design-for-living-room-free-png.png",
+                    return ProductCard(
+                      productModel: productList[index],
                     );
                   },
                 ),

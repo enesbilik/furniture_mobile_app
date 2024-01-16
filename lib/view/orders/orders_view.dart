@@ -22,7 +22,7 @@ class _OrdersViewState extends ConsumerState<OrdersView> {
       body: Padding(
         padding: AppPadding().pA15,
         child: ListView.builder(
-          itemCount: 7,
+          itemCount: 2,
           itemBuilder: (BuildContext context, int index) {
             return Container(
               margin: const EdgeInsets.only(bottom: 16),
@@ -48,7 +48,9 @@ class _OrdersViewState extends ConsumerState<OrdersView> {
                         ),
                         child: ClipOval(
                           child: Image.network(
-                            "https://static.wixstatic.com/media/1eac05_0796c2eab9e145439ae56bd6aee65d86~mv2.png/v1/fill/w_680,h_680,al_c,lg_1,q_90,enc_auto/1eac05_0796c2eab9e145439ae56bd6aee65d86~mv2.png",
+                            index % 2 == 0
+                                ? "https://cdn.ikea.com.tr/ozgur-icerik/kategori/kapakli-kitapliklar/kapakli-kitapliklar-liatorp.jpg"
+                                : "https://image-ikea.mncdn.com/ozgur-icerik/ana-sayfa/cy24-ocak/eket-koyu-gri-duvara-monte-konsol.jpg",
                             fit: BoxFit.cover,
                             width: 50,
                             height: 50,
@@ -62,11 +64,12 @@ class _OrdersViewState extends ConsumerState<OrdersView> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "26 Kasım",
+                            "${index == 0 ? '29' : '27'} Kasım",
                             style: TextStyle(color: Colors.grey.shade800),
                           ),
                           Text(
-                            "Paz, 21.05",
+                            "${index == 0 ? 'Paz' : 'Cum'}"
+                            ", 1${index + 1}.${index + 1 * 2}${index * 7}",
                             style: TextStyle(color: Colors.grey.shade800),
                           ),
                         ],
@@ -76,8 +79,8 @@ class _OrdersViewState extends ConsumerState<OrdersView> {
                       ),
                       Column(
                         children: [
-                          const Text(
-                            "12.999,00 TL",
+                          Text(
+                            "1${index * 2}.990,00 TL",
                             style: TextStyle(
                               color: Colors.green,
                               fontSize: 16,

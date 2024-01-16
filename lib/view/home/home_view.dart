@@ -52,9 +52,10 @@ class _HomeViewState extends ConsumerState<HomeView> {
                   controller: controller1,
                   icon: const Icon(Icons.search_outlined),
                   onTap: () {
+                    var newProdList = productList.map((e) => e.title).toList();
                     showSearch(
                       context: context,
-                      delegate: CustomSearchDelegate(),
+                      delegate: CustomSearchDelegate(newProdList, productList),
                     );
                   },
                 ),

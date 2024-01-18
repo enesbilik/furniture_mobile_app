@@ -12,6 +12,11 @@ class CartRiverpod extends ChangeNotifier {
             10,
       );
 
+  void clearCart() {
+    cartProducts.clear();
+    notifyListeners();
+  }
+
   var cartProducts = [
     // CartProductModel(
     //     title: "Stylish Chair",

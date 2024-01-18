@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:furniture_mobile_app/constants/paddings.dart';
 import 'package:furniture_mobile_app/view/cart/cart_riverpod.dart';
 import 'package:furniture_mobile_app/widgets/cart_product_card.dart';
+import 'package:furniture_mobile_app/widgets/custom_popup.dart';
 
 class CartView extends ConsumerStatefulWidget {
   const CartView({super.key});
@@ -69,7 +70,16 @@ class _CartViewState extends ConsumerState<CartView> {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.deepPurple),
-                        onPressed: () {},
+                        onPressed: () {
+                          watch.clearCart();
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return const CustomPopup(
+                                  text: "Siparişiniz oluşturuldu");
+                            },
+                          );
+                        },
                         child: const Text(
                           "Onayla",
                           style: TextStyle(
